@@ -1,3 +1,4 @@
+---
 - name: Change the hostname to _hostname
   ansible.windows.win_hostname:
     name: { _hostname }
