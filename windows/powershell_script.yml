@@ -4,8 +4,8 @@
   gather_facts: false
   vars:
     remote_zip: "C:\\script.zip"
-    remote_dest: "C:\\query_services.ps1"
-    remote_folder: "C:"
+    remote_dest: "C:\\PowerShell\\query_services.ps1"
+    remote_folder: "C:\\PowerShell"
 
   tasks:    
     - name: Copy zip to remote
