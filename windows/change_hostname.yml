@@ -4,9 +4,9 @@
   gather_facts: false
 
   tasks:
-    - name: Change the hostname to { _hostname }
+    - name: Change the hostname to {{ _hostname }}
       ansible.windows.win_hostname:
-      name: { _hostname }
+        name: {{ _hostname }}
       register: res
     
     - name: Reboot
