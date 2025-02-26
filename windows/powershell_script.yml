@@ -13,7 +13,7 @@
         dest: "{{ remote_zip }}"
     
     - name: Unzip script.zip
-      ansible.windows.win_unzip:
+      community.windows.win_unzip:
         src: "{{ remote_zip }}"
         dest: "{{ remote_dest }}"
 
