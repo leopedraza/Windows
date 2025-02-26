@@ -3,12 +3,18 @@
   hosts: "{{ _hosts | default('os_windows') }}"
   gather_facts: false
   vars:
+    remote_zip: "C:\\script.zip"
     remote_dest: "C:\\query_services.ps1"
 
-  tasks:
-    - name: Copy script to remote
+  tasks:    
+    - name: Copy zip to remote
       ansible.windows.win_copy:
-        src: "{{ playbook_dir }}/query_services.ps1"
+        src: "{{ playbook_dir }}/script.zip"
+        dest: "{{ remote_zip }}"
+    
+    - name: Unzip script.zip
+      community.windows.win_unzip:
+        src: "{{ remote_zip }}"
         dest: "{{ remote_dest }}"
 
     - name: Run Script
