@@ -5,6 +5,7 @@
   vars:
     remote_zip: "C:\\script.zip"
     remote_dest: "C:\\query_services.ps1"
+    remote_folder: "C:"
 
   tasks:    
     - name: Copy zip to remote
@@ -15,7 +16,7 @@
     - name: Unzip script.zip
       community.windows.win_unzip:
         src: "{{ remote_zip }}"
-        dest: "{{ remote_dest }}"
+        dest: "{{ remote_folder }}"
 
     - name: Run Script
       ansible.windows.win_powershell:
